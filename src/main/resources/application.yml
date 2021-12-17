@@ -1,0 +1,12 @@
+server:
+  port: ${CONFIG_SERVER_PORT}
+  shutdown: graceful
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GIT_CONFIG_REPO}
+          default-label: main
+        native:
+          search-locations: file:///${GIT_REPO}
